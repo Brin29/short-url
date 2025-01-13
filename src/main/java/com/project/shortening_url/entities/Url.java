@@ -18,12 +18,10 @@ public class Url {
     public Url(){
     }
 
-    public Ur(String longUrl, String shortUrl){
+    public Url(String longUrl, String shortUrl){
         this.longUrl = longUrl;
         this.shortUrl = shortUrl;
     }
-
-
 
     public String getShortUrl() {
         return shortUrl;
