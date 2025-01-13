@@ -1,15 +1,8 @@
 package com.project.shortening_url.entities;
 
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-
-import java.time.LocalDateTime;
 
 @Entity
 public class Url {
@@ -18,33 +11,26 @@ public class Url {
     @GeneratedValue
     private long id;
 
-    @Column(nullable = false, unique = true)
-    private String shortLink;
-
-    @Column(nullable = false)
     private String longUrl;
 
-    private LocalDateTime creationDate;
+    private String shortUrl;
 
-    private LocalDateTime expirationDate;
-
-    public Url() {
+    public Url(){
     }
 
-    public Url(long id, String shortLink, String longUrl, LocalDateTime creationDate, LocalDateTime expirationDate) {
-        this.id = id;
-        this.shortLink = shortLink;
+    public Ur(String longUrl, String shortUrl){
         this.longUrl = longUrl;
-        this.creationDate = creationDate;
-        this.expirationDate = expirationDate;
+        this.shortUrl = shortUrl;
     }
 
-    public String getShortLink() {
-        return shortLink;
+
+
+    public String getShortUrl() {
+        return shortUrl;
     }
 
-    public void setShortLink(String shortLink) {
-        this.shortLink = shortLink;
+    public void setShortUrl(String shortUrl) {
+        this.shortUrl = shortUrl;
     }
 
     public String getLongUrl() {
@@ -53,21 +39,5 @@ public class Url {
 
     public void setLongUrl(String longUrl) {
         this.longUrl = longUrl;
-    }
-
-    public LocalDateTime getCreationDate() {
-        return creationDate;
-    }
-
-    public void setCreationDate(LocalDateTime creationDate) {
-        this.creationDate = creationDate;
-    }
-
-    public LocalDateTime getExpirationDate() {
-        return expirationDate;
-    }
-
-    public void setExpirationDate(LocalDateTime expirationDate) {
-        this.expirationDate = expirationDate;
     }
 }

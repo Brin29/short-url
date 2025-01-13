@@ -1,6 +1,6 @@
 package com.project.shortening_url.controller;
 
-import com.project.shortening_url.entities.UrlRequest;
+import com.project.shortening_url.entities.Url;
 import com.project.shortening_url.service.UrlServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -17,10 +17,10 @@ public class UrlShorteningController {
     private UrlServiceImpl urlService;
 
     @PostMapping("/generate")
-    public ResponseEntity<String> generateShortLink(@RequestBody UrlRequest urlRequest) throws IOException {
-
-        String shortUrl = urlService.getShortUrl(urlRequest.getLongUrl());
-
+    public ResponseEntity<String> generateShortLink(@RequestBody Url url) throws IOException {
+        String shortUrl = urlService.getShortUrl(url.getLongUrl());
         return ResponseEntity.ok(shortUrl);
     }
+
+
 }
