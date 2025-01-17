@@ -1,14 +1,9 @@
 package com.project.shortening_url.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import java.io.Serializable;
 
-@Entity
-public class Url {
+public class Url implements Serializable {
 
-    @Id
-    @GeneratedValue
     private long id;
 
     private String longUrl;

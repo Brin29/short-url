@@ -31,8 +31,7 @@ public class UrlServiceImpl implements IUrlService{
 
         CreateBitlinkResponse response = client.bitlinks().shorten(longUrl).get();
         String link = response.getLink();
-
-
+        
         return link;
     }
 }
