@@ -5,7 +5,6 @@ import com.opsmatters.bitly.api.model.v4.CreateBitlinkResponse;
 import com.project.shortening_url.entities.Url;
 import com.project.shortening_url.repository.UrlRepository;
 import jakarta.annotation.PostConstruct;
-import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cache.annotation.CacheEvict;
