@@ -11,7 +11,10 @@ services:
 
   mysql:
     image: mysql
-    container_name: mysql_database
+    container_name: mysql_url_database
+    build:
+      context: .
+      dockerfile: Dockerfile
     environment:
       MYSQL_ROOT_PASSWORD: 2004
       MYSQL_DATABASE: urls
@@ -22,7 +25,7 @@ services:
     networks:
       - spring-network
     volumes:
-      - mysql-volume
+      - mysql-volume:/var/lib/mysql
 networks:
   spring-network:
 volumes:
