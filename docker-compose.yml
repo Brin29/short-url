@@ -2,6 +2,9 @@ services:
   spring-short-url:
     image: spring-short-url
     container_name: spring-short-url-container
+    build:
+      context: .
+      dockerfile: Dockerfile
     ports:
       - "8080:8080"
     networks:
@@ -12,9 +15,6 @@ services:
   mysql:
     image: mysql
     container_name: mysql_url_database
-    build:
-      context: .
-      dockerfile: Dockerfile
     environment:
       MYSQL_ROOT_PASSWORD: 2004
       MYSQL_DATABASE: urls
