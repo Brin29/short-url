@@ -1,0 +1,30 @@
+services:
+  spring-short-url:
+    image: spring-short-url
+    container_name: spring-short-url-container
+    ports:
+      - "8080:8080"
+    networks:
+      - spring-network
+    depends_on:
+      - mysql
+
+  mysql:
+    image: mysql
+    container_name: mysql_database
+    environment:
+      MYSQL_ROOT_PASSWORD: 2004
+      MYSQL_DATABASE: urls
+      MYSQL_USER: brienn
+      MYSQL_PASSWORD: 1234
+    ports:
+      - "3307:3306"
+    networks:
+      - spring-network
+    volumes:
+      - mysql-volume
+networks:
+  spring-network:
+volumes:
+  mysql-volume:
+
