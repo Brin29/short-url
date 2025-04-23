@@ -1,18 +1,18 @@
 # 🔗 Spring Boot URL Shortener with Bitly, Redis & Docker
 
-Este proyecto es una aplicación de backend desarrollada con **Spring Boot** que permite acortar URLs utilizando la API de **Bitly**, cachear resultados en **Redis**, y está lista para ser desplegada con **Docker**.
+This project is a backend application developed with Spring Boot that allows shortening URLs using the Bitly API, caching results in Redis, and is ready for deployment with Docker.
 
-## 🚀 Características
+## 🚀 Features
 
-- Acorta URLs usando la API oficial de Bitly.
-- Caching con Redis para mejorar el rendimiento.
-- Arquitectura modular y fácil de extender.
-- Dockerizado para ejecución y despliegue rápido.
-- Variables de entorno configurables.
+- Shorten URLs using the official Bitly API.
+- Caching with Redis for improved performance.
+- Modular and easily extensible architecture.
+- Dockerized for quick execution and deployment.
+- Configurable environment variables.
 
 ---
 
-## 📦 Tecnologías
+## 📦 Technologies
 
 - [Spring Boot](https://spring.io/projects/spring-boot)
 - [Redis](https://redis.io/)
@@ -23,12 +23,42 @@ Este proyecto es una aplicación de backend desarrollada con **Spring Boot** que
 
 ---
 
-## ⚙️ Configuración del entorno
+## ⚙️ Environment Setup
 
-### 1. Clona el repositorio
+### 1. Clone the repository
 
 ```bash
-git clone https://github.com/tuusuario/url-shortener-springboot.git
-cd url-shortener-springboot
+    git clone https://github.com/tuusuario/url-shortener-springboot.git
+    cd url-shortener-springboot
+```
 
-### 2. 
+### 2.  Environment Variables
+
+- Configure you environment variables
+
+```bash
+    BITLY_API_KEY=your_bitly_api_key  
+    REDIS_HOST=redis  
+    REDIS_PORT=6379
+    USERNAME=your username
+    PASSWORD=your_password
+```
+
+### 3. Build and Run with Docker
+
+```bash
+  docker-compose up --build  
+```
+
+
+### 📄 4. API Endpoints
+
+- POST=/api/url
+- GET=/api/url/{id}
+- GET=/api/url
+- PUT=/api/url/{id}
+- DELETE=/api/url/{id}
+
+### 📝 5. LICENSE
+
+- This project is licensed under the MIT License. 
